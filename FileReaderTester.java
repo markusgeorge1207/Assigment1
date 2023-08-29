@@ -7,6 +7,6 @@ public class FileReaderTester
         Files.writeString ("Jumanji.txt", "Welcome to the Jungle");
 
         //testing countChars
-        System.out.println ( Files.countChars(fileName) ) ;
+        System.out.println ( Files.countCharacters(fileName) ) ;
     }
 }

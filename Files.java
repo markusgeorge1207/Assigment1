@@ -30,7 +30,7 @@ public class Files
         return null;
     }
 
-    public static int countChars (String fileName)
+    public static int countCharacters (String fileName)
     {
         try 
         {
