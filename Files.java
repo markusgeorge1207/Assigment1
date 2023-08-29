@@ -5,15 +5,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 public class Files
 {
-    String input;
-    public void writeString(String outputFile, String input) {
+    public static void writeString(String outputFile, String input) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
             writer.write(input);
         } catch (IOException e) {
             System.out.println("An error occurred: " + e.getMessage());
         }
     }
-    public String readFile (String inputFile)
+    public static String readFile (String inputFile)
     { 
         try (BufferedReader reader = new BufferedReader (new FileReader(inputFile)))
         {
@@ -29,5 +28,28 @@ public class Files
             System.out.println ("Error:" + e.getMessage());
         }
         return null;
+    }
+
+    public static int countChars (String fileName)
+    {
+        try 
+        {
+            BufferedReader br = new BufferedReader (new FileReader(fileName));
+            
+            int count = 0;
+            while (br.ready())
+            {
+                br.read();
+                count++; 
+            }
+            
+            br.close();
+            return count; 
+        }
+        catch (IOException e)
+        {
+            System.out.println (e.getMessage());
+            return -1; 
+        }
     }
 }
